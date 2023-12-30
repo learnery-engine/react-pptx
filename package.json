@@ -1,5 +1,5 @@
 {
-  "name": "react-pptx",
+  "name": "@learnery/react-pptx",
   "description": "Render JSX to a .pptx file",
   "version": "0.0.0-development",
   "repository": "github:learnery-engine/react-pptx",
