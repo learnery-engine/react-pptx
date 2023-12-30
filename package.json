@@ -2,7 +2,7 @@
   "name": "react-pptx",
   "description": "Render JSX to a .pptx file",
   "version": "0.0.0-development",
-  "repository": "github:wyozi/react-pptx",
+  "repository": "github:learnery-engine/react-pptx",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "license": "MIT",
