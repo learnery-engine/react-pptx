@@ -24,13 +24,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      - name: Build pages
-        run: cd pages && pnpm install && pnpm run build
-      - name: Deploy pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: pages/dist
-          CLEAN: true
-          SINGLE_COMMIT: true
