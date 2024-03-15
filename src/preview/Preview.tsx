@@ -386,11 +386,19 @@ const SlideObjectPreview = ({
               className="image-meta-overlay"
             >
               Photo by
-              <a href={object.meta.authorLink} style={{ color: "#fff" }}>
+              <a
+                target="_blank"
+                href={object.meta.authorLink}
+                style={{ color: "#fff" }}
+              >
                 {object.meta.authorName}
               </a>
               on
-              <a href={object.meta.unsplashLink} style={{ color: "#fff" }}>
+              <a
+                target="_blank"
+                href={object.meta.unsplashLink}
+                style={{ color: "#fff" }}
+              >
                 Unsplash
               </a>
             </div>
