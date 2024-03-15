@@ -104,13 +104,11 @@ const renderSlideObject = async (
   } else if (object.kind === "image") {
     const { data, sizing } = await processImageData(object);
 
-    if (sizing && sizing.fit !== "cover") {
+    if (sizing && sizing.fit === "cover") {
       slide.addImage({
         data,
         x,
         y,
-        w,
-        h,
         sizing: object.style.sizing ? sizing : undefined,
       });
     } else {
@@ -118,6 +116,8 @@ const renderSlideObject = async (
         data,
         x,
         y,
+        w,
+        h,
         sizing: object.style.sizing ? sizing : undefined,
       });
     }
