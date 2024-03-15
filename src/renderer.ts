@@ -118,8 +118,6 @@ const renderSlideObject = async (
         data,
         x,
         y,
-        w: "100%",
-        h: "100%",
         sizing: object.style.sizing ? sizing : undefined,
       });
     }
