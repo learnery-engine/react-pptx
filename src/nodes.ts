@@ -119,6 +119,11 @@ export type ImageProps = VisualBaseProps & {
       imageHeight?: number;
     };
   };
+  meta?: {
+    authorName?: string;
+    unsplashLink?: string;
+    authorLink?: string;
+  };
 };
 export const Image: React.FC<ImageProps> =
   NodeTypes.IMAGE as unknown as React.FC;
