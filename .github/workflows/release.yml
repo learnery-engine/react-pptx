@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.16.0
+          version: 8.15.3
       - uses: actions/setup-node@v2
         with:
           node-version: "20.x"
