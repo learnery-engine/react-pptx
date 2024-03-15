@@ -355,18 +355,47 @@ const SlideObjectPreview = ({
           />
         </div>
       ) : object.kind === "image" ? (
-        <img
-          src={
-            object.src.kind === "data"
-              ? `data:${object.src[object.src.kind]}`
-              : object.src[object.src.kind]
-          }
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: constrainObjectFit(object.style.sizing),
-          }}
-        />
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          <img
+            src={
+              object.src.kind === "data"
+                ? `data:${object.src[object.src.kind]}`
+                : object.src[object.src.kind]
+            }
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: constrainObjectFit(object.style.sizing),
+            }}
+          />
+          {object.meta && (
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0,0,0,0.5)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                opacity: 0,
+                transition: "opacity 0.3s",
+              }}
+              className="image-meta-overlay"
+            >
+              Photo by
+              <a href={object.meta.authorLink} style={{ color: "#fff" }}>
+                {object.meta.authorName}
+              </a>
+              on
+              <a href={object.meta.unsplashLink} style={{ color: "#fff" }}>
+                Unsplash
+              </a>
+            </div>
+          )}
+        </div>
       ) : object.kind === "table" ? (
         <table
           style={{

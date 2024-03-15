@@ -97,6 +97,11 @@ export type InternalText = ObjectBase & {
 export type InternalImage = ObjectBase & {
   kind: "image";
   src: InternalImageSrc;
+  meta?: {
+    authorName?: string;
+    unsplashLink?: string;
+    authorLink?: string;
+  };
   style: {
     sizing: {
       fit: "contain" | "cover" | "crop";

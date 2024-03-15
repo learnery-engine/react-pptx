@@ -104,14 +104,25 @@ const renderSlideObject = async (
   } else if (object.kind === "image") {
     const { data, sizing } = await processImageData(object);
 
-    slide.addImage({
-      data,
-      x,
-      y,
-      w,
-      h,
-      sizing: object.style.sizing ? sizing : undefined,
-    });
+    if (sizing.type === "cover") {
+      slide.addImage({
+        data,
+        x,
+        y,
+        w,
+        h,
+        sizing: object.style.sizing ? sizing : undefined,
+      });
+    } else {
+      slide.addImage({
+        data,
+        x,
+        y,
+        w: "100%",
+        h: "100%",
+        sizing: object.style.sizing ? sizing : undefined,
+      });
+    }
   } else if (object.kind === "shape") {
     const style = object.style;
     const shapeType = pres.ShapeType[object.type];
