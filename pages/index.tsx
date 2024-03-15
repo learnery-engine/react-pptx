@@ -165,6 +165,7 @@ const code = `ReactPPTX.render(
       <Image
         src={{ kind: "path", path: "https://source.unsplash.com/random/800x600" }}
         style={{ x: "10%", y: "10%", w: "80%", h: "80%" }}
+        meta={{authorName: "test", authorLink: "test", unsplashLink:"test"}}
       />
     </Slide>
     <Slide>

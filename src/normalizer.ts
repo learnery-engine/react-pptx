@@ -414,6 +414,7 @@ const normalizeSlideObject = (
         ...normalizedCoordinates,
         sizing: node.props.style.sizing ?? null,
       },
+      meta: node.props.meta,
     };
   } else if (isShape(node)) {
     return {
